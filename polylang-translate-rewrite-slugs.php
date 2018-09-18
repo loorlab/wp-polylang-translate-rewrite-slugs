@@ -178,7 +178,7 @@ class Polylang_Translate_Rewrite_Slugs {
 		global $polylang;
 
 		// We always check for the post language. Otherwise, the current language.
-		$post_language = $polylang->model->get_post_language($post->ID);
+		$post_language = $polylang->model->post->get_language($post->ID);
 		if ($post_language) {
 			$lang = $post_language->slug;
 		} else {
@@ -279,7 +279,7 @@ class Polylang_Translate_Rewrite_Slugs {
 				return $term;
 
 			// Get the term language.
-			$term_language = $polylang->model->get_term_language($term->term_id);
+			$term_language = $polylang->model->term->get_language($term->term_id);
 			if ($term_language) {
 				$lang = $term_language->slug;
 			} else {
